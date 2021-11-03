@@ -85,5 +85,7 @@ class BookController extends Controller
             "message" => "Data Buku Telah dihapus",
             "data" => $book
         ]);
+    }public function search($title){
+        return Book::where('title', 'like', '%'.$title.'%')->get();
     }
 }

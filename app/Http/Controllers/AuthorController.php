@@ -106,5 +106,7 @@ class AuthorController extends Controller
             "message" => "Data Author Telah dihapus",
             "data" => $author
         ]);
+    }public function search($name){
+        return Author::where('name', 'like', '%'.$name.'%')->get();
     }
 }
